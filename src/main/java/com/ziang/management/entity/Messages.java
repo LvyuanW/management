@@ -1,0 +1,38 @@
+package com.ziang.management.entity;
+
+import lombok.Data;
+import com.baomidou.mybatisplus.annotation.*;
+import jakarta.validation.constraints.*;
+import java.io.Serial;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Data
+@TableName("messages")
+public class Messages implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    @TableId(type = IdType.ASSIGN_ID)
+    private String uid; // 唯一标识符
+
+    private String name; // 发件人名称
+
+    private String email; // 发件人邮箱
+
+    private String subject; // 主题
+
+    private String message; // 内容
+
+    private Integer isRead; // 是否已读
+
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createdAt; // 创建时间
+
+    private LocalDateTime deletedAt; // 逻辑删除时间
+
+    @TableLogic
+    private Integer isDeleted; // 逻辑删除标记
+
+}
