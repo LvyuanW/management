@@ -8,6 +8,17 @@ spring:
     password: pofa888
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  web:
+    resources:
+      static-locations: file:media/uploads/
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+
+file:
+  upload-path: media/uploads/
+
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.ziang.management.entity
