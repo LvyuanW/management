@@ -1,7 +1,10 @@
 package com.ziang.management.controller;
 
+import com.ziang.management.dto.TeamMemberDTO;
+import com.ziang.management.dto.UserDTO;
 import com.ziang.management.entity.TeamMembers;
 import com.ziang.management.service.TeamMembersService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -14,8 +17,8 @@ public class TeamMembersController {
 
     // Create
     @PostMapping("/create")
-    public boolean create(@RequestBody TeamMembers entity) {
-        return service.save(entity);
+    public boolean create(@RequestBody @Valid TeamMemberDTO dto) {
+        return service.createTeamMember(dto);
     }
 
     // Read by UID

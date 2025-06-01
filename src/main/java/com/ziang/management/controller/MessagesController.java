@@ -1,7 +1,10 @@
 package com.ziang.management.controller;
 
+import com.ziang.management.dto.MessageDTO;
+import com.ziang.management.dto.NewsDTO;
 import com.ziang.management.entity.Messages;
 import com.ziang.management.service.MessagesService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -14,8 +17,8 @@ public class MessagesController {
 
     // Create
     @PostMapping("/create")
-    public boolean create(@RequestBody Messages entity) {
-        return service.save(entity);
+    public boolean create(@RequestBody @Valid MessageDTO dto) {
+        return service.createMessage(dto);
     }
 
     // Read by UID

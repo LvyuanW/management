@@ -1,7 +1,9 @@
 package com.ziang.management.controller;
 
+import com.ziang.management.dto.ResearchProjectDTO;
 import com.ziang.management.entity.ResearchProjects;
 import com.ziang.management.service.ResearchProjectsService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
@@ -14,8 +16,8 @@ public class ResearchProjectsController {
 
     // Create
     @PostMapping("/create")
-    public boolean create(@RequestBody ResearchProjects entity) {
-        return service.save(entity);
+    public boolean create(@RequestBody @Valid ResearchProjectDTO dto) {
+        return service.createResearchProject(dto);
     }
 
     // Read by UID
