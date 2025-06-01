@@ -17,6 +17,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         // 自动填充 createdAt 字段
         this.strictInsertFill(metaObject, "createdAt", LocalDateTime.class, LocalDateTime.now());
+        this.strictInsertFill(metaObject, "isRead", Integer.class, 0);
     }
     //弃用
     @Override
