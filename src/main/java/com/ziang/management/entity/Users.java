@@ -28,9 +28,6 @@ public class Users implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createdAt; // 创建时间
 
-    @TableField(fill = FieldFill.UPDATE)
-    private LocalDateTime updatedAt; // 更新时间
-
     private LocalDateTime deletedAt; // 逻辑删除时间
 
     @TableLogic

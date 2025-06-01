@@ -25,6 +25,7 @@ public class Messages implements Serializable {
 
     private String message; // 内容
 
+    @TableField(fill = FieldFill.INSERT)
     private Integer isRead; // 是否已读
 
     @TableField(fill = FieldFill.INSERT)
