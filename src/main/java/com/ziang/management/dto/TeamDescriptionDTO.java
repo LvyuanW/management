@@ -5,8 +5,6 @@ import lombok.Data;
 
 @Data
 public class TeamDescriptionDTO {
-    private String avatarUrl;
-
     @NotBlank(message = "content required")
     private String content;
 

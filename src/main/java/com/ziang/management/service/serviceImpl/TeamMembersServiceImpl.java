@@ -1,6 +1,7 @@
 package com.ziang.management.service.serviceImpl;
 
 import com.ziang.management.dto.TeamMemberDTO;
+import com.ziang.management.dto.UpdateTeamMemberDTO;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ziang.management.entity.TeamMembers;
@@ -20,5 +21,18 @@ public class TeamMembersServiceImpl extends ServiceImpl<TeamMembersMapper, TeamM
         teamMember.setDescription(dto.getDescription());
         teamMember.setIsDeleted(0);
         return this.save(teamMember);
+    }
+
+    @Override
+    public boolean updateTeamMember(UpdateTeamMemberDTO dto) {
+        TeamMembers member = new TeamMembers();
+        member.setUid(dto.getUid());
+        member.setAvatarUrl(dto.getAvatarUrl());
+        member.setTitle(dto.getTitle());
+        member.setRole(dto.getRole());
+        member.setDegree(dto.getDegree());
+        member.setUniversity(dto.getUniversity());
+        member.setDescription(dto.getDescription());
+        return this.updateById(member);
     }
 }

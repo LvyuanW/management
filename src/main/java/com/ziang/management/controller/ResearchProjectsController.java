@@ -1,6 +1,7 @@
 package com.ziang.management.controller;
 
 import com.ziang.management.dto.ResearchProjectDTO;
+import com.ziang.management.dto.UpdateResearchProjectDTO;
 import com.ziang.management.entity.ResearchProjects;
 import com.ziang.management.service.ResearchProjectsService;
 import jakarta.validation.Valid;
@@ -34,8 +35,8 @@ public class ResearchProjectsController {
 
     // Update
     @PostMapping("/update")
-    public boolean update(@RequestBody ResearchProjects entity) {
-        return service.updateById(entity);
+    public boolean update(@RequestBody @Valid UpdateResearchProjectDTO dto) {
+        return service.updateResearchProject(dto);
     }
 
     // Delete (logical)

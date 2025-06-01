@@ -1,6 +1,7 @@
 package com.ziang.management.service.serviceImpl;
 
 import com.ziang.management.dto.MessageDTO;
+import com.ziang.management.dto.UpdateMessageDTO;
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ziang.management.entity.Messages;
@@ -19,4 +20,12 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
         messages.setEmail(dto.getEmail());
         return this.save(messages);
     }
+
+    public boolean updateMessage(UpdateMessageDTO dto) {
+        Messages msg = new Messages();
+        msg.setUid(dto.getUid());
+        msg.setIsRead(dto.getIsRead());
+        return this.updateById(msg);
+    }
+
 }

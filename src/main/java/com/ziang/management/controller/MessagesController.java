@@ -1,7 +1,7 @@
 package com.ziang.management.controller;
 
 import com.ziang.management.dto.MessageDTO;
-import com.ziang.management.dto.NewsDTO;
+import com.ziang.management.dto.UpdateMessageDTO;
 import com.ziang.management.entity.Messages;
 import com.ziang.management.service.MessagesService;
 import jakarta.validation.Valid;
@@ -35,8 +35,8 @@ public class MessagesController {
 
     // Update
     @PostMapping("/update")
-    public boolean update(@RequestBody Messages entity) {
-        return service.updateById(entity);
+    public boolean update(@RequestBody @Valid UpdateMessageDTO dto) {
+        return service.updateMessage(dto);
     }
 
     // Delete (logical)

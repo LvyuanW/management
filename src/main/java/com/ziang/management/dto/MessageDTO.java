@@ -19,5 +19,5 @@ public class MessageDTO {
     private String message;
 
     @NotNull(message = "required")
-    private String isRead;
+    private Integer isRead;
 }

@@ -1,7 +1,7 @@
 package com.ziang.management.controller;
 
 import com.ziang.management.dto.TeamMemberDTO;
-import com.ziang.management.dto.UserDTO;
+import com.ziang.management.dto.UpdateTeamMemberDTO;
 import com.ziang.management.entity.TeamMembers;
 import com.ziang.management.service.TeamMembersService;
 import jakarta.validation.Valid;
@@ -35,8 +35,8 @@ public class TeamMembersController {
 
     // Update
     @PostMapping("/update")
-    public boolean update(@RequestBody TeamMembers entity) {
-        return service.updateById(entity);
+    public boolean update(@RequestBody @Valid UpdateTeamMemberDTO dto) {
+        return service.updateTeamMember(dto);
     }
 
     // Delete (logical)

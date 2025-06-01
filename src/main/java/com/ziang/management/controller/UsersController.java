@@ -1,5 +1,6 @@
 package com.ziang.management.controller;
 
+import com.ziang.management.dto.UpdateUserDTO;
 import com.ziang.management.dto.UserDTO;
 import com.ziang.management.entity.Users;
 import com.ziang.management.service.UsersService;
@@ -32,8 +33,8 @@ public class UsersController {
     }
 
     @PostMapping("/update")
-    public boolean update(@RequestBody Users entity) {
-        return usersService.updateById(entity);
+    public boolean update(@RequestBody @Valid UpdateUserDTO dto) {
+        return usersService.updateUser(dto);
     }
 
     @GetMapping("/delete/{uid}")
