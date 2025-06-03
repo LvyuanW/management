@@ -16,6 +16,9 @@ public class UpdateTeamMemberDTO {
     @NotBlank(message = "role required")
     private String role;
 
+    @NotBlank(message = "responsibilities required")
+    private String responsibilities;
+
     @NotBlank(message = "degree required")
     private String degree;
 

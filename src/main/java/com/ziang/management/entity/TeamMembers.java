@@ -2,7 +2,6 @@ package com.ziang.management.entity;
 
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.*;
-import jakarta.validation.constraints.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -22,6 +21,8 @@ public class TeamMembers implements Serializable {
     private String title; // 姓名/头衔
 
     private String role; // 角色
+
+    private String responsibilities;
 
     private String degree; // 学位
 

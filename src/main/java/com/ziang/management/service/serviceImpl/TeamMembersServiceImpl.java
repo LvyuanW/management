@@ -15,6 +15,7 @@ public class TeamMembersServiceImpl extends ServiceImpl<TeamMembersMapper, TeamM
     public boolean createTeamMember(TeamMemberDTO dto){
         TeamMembers teamMember = new TeamMembers();
         teamMember.setAvatarUrl(dto.getAvatarUrl());
+        teamMember.setResponsibilities(dto.getResponsibilities());
         teamMember.setDegree(dto.getDegree());
         teamMember.setTitle(dto.getTitle());
         teamMember.setRole(dto.getRole());
@@ -30,6 +31,7 @@ public class TeamMembersServiceImpl extends ServiceImpl<TeamMembersMapper, TeamM
         member.setAvatarUrl(dto.getAvatarUrl());
         member.setTitle(dto.getTitle());
         member.setRole(dto.getRole());
+        member.setResponsibilities(dto.getResponsibilities());
         member.setDegree(dto.getDegree());
         member.setUniversity(dto.getUniversity());
         member.setDescription(dto.getDescription());

@@ -14,6 +14,7 @@ public class ResearchProjectsServiceImpl extends ServiceImpl<ResearchProjectsMap
     public boolean createResearchProject(ResearchProjectDTO dto){
         ResearchProjects researchProjects = new ResearchProjects();
         researchProjects.setTitle(dto.getTitle());
+        researchProjects.setImageUrl(dto.getImageUrl());
         researchProjects.setDescription(dto.getDescription());
         return this.save(researchProjects);
     }
